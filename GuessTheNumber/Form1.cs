@@ -19,37 +19,50 @@ namespace GuessTheNumber
 
         Random rnd = new Random();
 
-        int randomNumber, lives;
+        int randomNumber = 0, lives;
 
         private void btnGuess_Click(object sender, EventArgs e)
         {
-            int score;
-            if (int.Parse(txtGuess.Text) == randomNumber)
+            switch (btnGuess.Text)
             {
-                score = lives * 10;
-                lblGuessResult.Text = "You Win!!! \n Your Score is: " + score;
-                this.Close();
-            }
-            else if (int.Parse(txtGuess.Text) < randomNumber && lives > 1)
-            {
-                lblGuessResult.Text = "Your number is smaller. Current live(s): " + (--lives);
-            }
-            else if (int.Parse(txtGuess.Text) > randomNumber && lives > 1)
-            {
-                lblGuessResult.Text = "Your number is bigger. Current live(s): " + (--lives);
-            }
-            else
-            {
-                lblGuessResult.Text = "You loose the number was: " + randomNumber;
-                this.Close();
-            }
-            txtGuess.Text = "";
+                case "Guess":
+                    int score;
+                    if (int.Parse(txtGuess.Text) == randomNumber)
+                    {
+                        score = lives * 10;
+                        lblGuessResult.Text = "You Win!!! \n Your Score is: " + score;
+                        btnGuess.Text = "Play Again";
+                        txtGuess.Visible = false;
+                    }
+                    else if (int.Parse(txtGuess.Text) < randomNumber && lives > 1)
+                    {
+                        lblGuessResult.Text = "Your number is smaller. Current live(s): " + (--lives);
+                    }
+                    else if (int.Parse(txtGuess.Text) > randomNumber && lives > 1)
+                    {
+                        lblGuessResult.Text = "Your number is bigger. Current live(s): " + (--lives);
+                    }
+                    else
+                    {
+                        lblGuessResult.Text = "You loose the number was: " + randomNumber;
+                        btnGuess.Text = "Play Again";
+                        txtGuess.Visible = false;
+                    }
+                    txtGuess.Text = "";
+                    break;
+                case "Start":
+                case "Play Again":
+                    randomNumber = 4;
+                    lives = 5;
+                    txtGuess.Visible = true;
+                    btnGuess.Text = "Guess";
+                    lblGuessResult.Text = "Game started";
+                    break;
+                default:
+                    break;
+            }      
+
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            randomNumber = rnd.Next(1, 101);
-            lives = 5;
-        }
     }
 }

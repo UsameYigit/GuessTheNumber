@@ -41,6 +41,7 @@ namespace GuessTheNumber
             this.txtGuess.Name = "txtGuess";
             this.txtGuess.Size = new System.Drawing.Size(100, 20);
             this.txtGuess.TabIndex = 0;
+            this.txtGuess.Visible = false;
             // 
             // lblInformation
             // 
@@ -67,7 +68,7 @@ namespace GuessTheNumber
             this.btnGuess.Name = "btnGuess";
             this.btnGuess.Size = new System.Drawing.Size(75, 23);
             this.btnGuess.TabIndex = 3;
-            this.btnGuess.Text = "Guess";
+            this.btnGuess.Text = "Start";
             this.btnGuess.UseVisualStyleBackColor = true;
             this.btnGuess.Click += new System.EventHandler(this.btnGuess_Click);
             // 
@@ -82,7 +83,6 @@ namespace GuessTheNumber
             this.Controls.Add(this.txtGuess);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
