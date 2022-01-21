@@ -29,18 +29,18 @@ namespace GuessTheNumber
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGuess = new System.Windows.Forms.TextBox();
             this.lblInformation = new System.Windows.Forms.Label();
             this.lblGuessResult = new System.Windows.Forms.Label();
             this.btnGuess = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtGuess
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 111);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtGuess.Location = new System.Drawing.Point(130, 111);
+            this.txtGuess.Name = "txtGuess";
+            this.txtGuess.Size = new System.Drawing.Size(100, 20);
+            this.txtGuess.TabIndex = 0;
             // 
             // lblInformation
             // 
@@ -69,6 +69,7 @@ namespace GuessTheNumber
             this.btnGuess.TabIndex = 3;
             this.btnGuess.Text = "Guess";
             this.btnGuess.UseVisualStyleBackColor = true;
+            this.btnGuess.Click += new System.EventHandler(this.btnGuess_Click);
             // 
             // Form1
             // 
@@ -78,7 +79,7 @@ namespace GuessTheNumber
             this.Controls.Add(this.btnGuess);
             this.Controls.Add(this.lblGuessResult);
             this.Controls.Add(this.lblInformation);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtGuess);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -88,7 +89,7 @@ namespace GuessTheNumber
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGuess;
         private System.Windows.Forms.Label lblInformation;
         private System.Windows.Forms.Label lblGuessResult;
         private System.Windows.Forms.Button btnGuess;
