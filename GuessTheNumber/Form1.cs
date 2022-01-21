@@ -17,11 +17,26 @@ namespace GuessTheNumber
             InitializeComponent();
         }
 
+        Random rnd = new Random();
+
+        int randomNumber;
+
         private void btnGuess_Click(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            int randomNumber = rnd.Next(1, 101);
-            if(txt randomNumber)
+            
+            if(int.Parse(txtGuess.Text) == randomNumber)
+            {
+                lblGuessResult.Text = "You Win!!!";
+            }
+            else
+            {
+                lblGuessResult.Text = "Looser!!!";
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            randomNumber = rnd.Next(1, 101);
         }
     }
 }
