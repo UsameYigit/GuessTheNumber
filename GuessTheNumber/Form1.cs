@@ -28,7 +28,7 @@ namespace GuessTheNumber
             {
                 score = lives * 10;
                 lblGuessResult.Text = "You Win!!! \n Your Score is: " + score;
-                lives = 5;
+                this.Close();
             }
             else if (int.Parse(txtGuess.Text) < randomNumber && lives > 1)
             {
@@ -41,7 +41,7 @@ namespace GuessTheNumber
             else
             {
                 lblGuessResult.Text = "You loose the number was: " + randomNumber;
-                lives = 5;
+                this.Close();
             }
             txtGuess.Text = "";
         }

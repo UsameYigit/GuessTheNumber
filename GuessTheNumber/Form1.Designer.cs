@@ -56,7 +56,7 @@ namespace GuessTheNumber
             // 
             this.lblGuessResult.AutoSize = true;
             this.lblGuessResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblGuessResult.Location = new System.Drawing.Point(152, 185);
+            this.lblGuessResult.Location = new System.Drawing.Point(90, 179);
             this.lblGuessResult.Name = "lblGuessResult";
             this.lblGuessResult.Size = new System.Drawing.Size(0, 20);
             this.lblGuessResult.TabIndex = 2;
