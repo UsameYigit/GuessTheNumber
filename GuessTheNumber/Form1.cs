@@ -43,6 +43,7 @@ namespace GuessTheNumber
                 lblGuessResult.Text = "You loose the number was: " + randomNumber;
                 lives = 5;
             }
+            txtGuess.Text = "";
         }
 
         private void Form1_Load(object sender, EventArgs e)
