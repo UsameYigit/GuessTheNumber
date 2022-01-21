@@ -28,9 +28,13 @@ namespace GuessTheNumber
             {
                 lblGuessResult.Text = "You Win!!!";
             }
-            else
+            else if (int.Parse(txtGuess.Text) < randomNumber)
             {
-                lblGuessResult.Text = "Looser!!!";
+                lblGuessResult.Text = "Your number is smaller";
+            }
+            else if (int.Parse(txtGuess.Text) > randomNumber)
+            {
+                lblGuessResult.Text = "Your number is bigger";
             }
         }
 
