@@ -52,7 +52,7 @@ namespace GuessTheNumber
                     break;
                 case "Start":
                 case "Play Again":
-                    randomNumber = rnd.Next(1,100);
+                    randomNumber = rnd.Next(1,101);
                     lives = 5;
                     txtGuess.Visible = true;
                     btnGuess.Text = "Guess";
