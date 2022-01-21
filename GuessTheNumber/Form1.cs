@@ -21,26 +21,35 @@ namespace GuessTheNumber
 
         int randomNumber;
 
+        int lives;
+
         private void btnGuess_Click(object sender, EventArgs e)
         {
             
             if(int.Parse(txtGuess.Text) == randomNumber)
             {
                 lblGuessResult.Text = "You Win!!!";
+                lives = 5;
             }
-            else if (int.Parse(txtGuess.Text) < randomNumber)
+            else if (int.Parse(txtGuess.Text) < randomNumber && lives > 1)
             {
-                lblGuessResult.Text = "Your number is smaller";
+                lblGuessResult.Text = "Your number is smaller. Current live(s): " + (--lives);
             }
-            else if (int.Parse(txtGuess.Text) > randomNumber)
+            else if (int.Parse(txtGuess.Text) > randomNumber && lives > 1)
             {
-                lblGuessResult.Text = "Your number is bigger";
+                lblGuessResult.Text = "Your number is bigger. Current live(s): " + (--lives);
+            }
+            else
+            {
+                lblGuessResult.Text = "You loose the number was: " + randomNumber;
+                lives = 5;
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             randomNumber = rnd.Next(1, 101);
+            lives = 5;
         }
     }
 }
