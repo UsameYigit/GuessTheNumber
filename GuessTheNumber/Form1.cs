@@ -19,16 +19,15 @@ namespace GuessTheNumber
 
         Random rnd = new Random();
 
-        int randomNumber;
-
-        int lives;
+        int randomNumber, lives;
 
         private void btnGuess_Click(object sender, EventArgs e)
         {
-            
-            if(int.Parse(txtGuess.Text) == randomNumber)
+            int score;
+            if (int.Parse(txtGuess.Text) == randomNumber)
             {
-                lblGuessResult.Text = "You Win!!!";
+                score = lives * 10;
+                lblGuessResult.Text = "You Win!!! \n Your Score is: " + score;
                 lives = 5;
             }
             else if (int.Parse(txtGuess.Text) < randomNumber && lives > 1)
